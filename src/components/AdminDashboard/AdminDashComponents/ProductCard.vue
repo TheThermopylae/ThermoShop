@@ -10,10 +10,11 @@
         </div>
         <div class="mt-1">
             <div class="tooltip" data-tip="Delete Product">
-                <i class="fa-solid fa-trash hover:text-red-500 transition-all cursor-pointer" @click="$emit('showDeleteModal')"></i>
+                <i class="fa-solid fa-trash hover:text-red-500 transition-all cursor-pointer"
+                    @click="$emit('showDeleteModal')"></i>
             </div>
             <div class="tooltip ml-3" data-tip="Edit Product">
-                <i class="fa-solid fa-pen hover:text-gray-500 transition-all cursor-pointer"></i>
+                <i class="fa-solid fa-pen hover:text-gray-500 transition-all cursor-pointer" @click="$emit('showEditModal')"></i>
             </div>
         </div>
     </div>

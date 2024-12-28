@@ -8,8 +8,7 @@
                     <li><a>Item 2</a></li>
                 </ul>
             </div>
-            <router-link to="/" class="ml-3 text-3xl font-bold">Thermo<span
-                    class="text-primary">Shop</span></router-link>
+            <router-link to="/" class="ml-3 text-3xl font-bold gradient-text">Thermo<span>Shop</span></router-link>
         </div>
         <div class="flex gap-5">
             <div class="relative">
@@ -32,7 +31,8 @@
                     Sign In / Up
                 </div>
             </router-link>
-            <div class="dropdown dropdown-bottom dropdown-end" v-else-if="userData[1].rule == 'admin' || userData[1].rule == 'metaAdmin'">
+            <div class="dropdown dropdown-bottom dropdown-end"
+                v-else-if="userData[1].rule == 'admin' || userData[1].rule == 'metaAdmin'">
                 <div tabindex="0" role="button" class="m-1">
                     <img v-if="!userData[1].profile" src="/public/img/profile.png" alt="profile"
                         class="w-14 h-14 rounded-full">
