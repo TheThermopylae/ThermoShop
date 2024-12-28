@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'rubik';
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.mySwiper {
+  gap: 20px;
+  display: flex;
+}
+
+.btn {
+  @apply rounded-full;
+}
