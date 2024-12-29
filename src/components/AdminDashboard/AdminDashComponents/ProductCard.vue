@@ -1,14 +1,14 @@
 <template>
-    <div class="bg-card p-3 rounded-lg">
+    <div class="bg-card p-3 rounded-lg relative">
         <img :src="product[1].img" :alt="product[1].name">
-        <div>
+        <div class="mb-7">
             <h4 class="mt-2 mb-1 text-xl border-b border-gray-300 pb-1">{{ product[1].name }}</h4>
             <div class="flex justify-between text-md">
                 <span class="text-green-500">{{ product[1].price.toLocaleString() }}$</span>
                 <span>Count : {{ product[1].count }}</span>
             </div>
         </div>
-        <div class="mt-1">
+        <div class="mt-2 absolute bottom-2">
             <div class="tooltip" data-tip="Delete Product">
                 <i class="fa-solid fa-trash hover:text-red-500 transition-all cursor-pointer"
                     @click="$emit('showDeleteModal')"></i>

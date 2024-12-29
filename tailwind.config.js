@@ -10,14 +10,17 @@ export default {
           lg: '4rem',
           xl: '5rem',
           '2xl': '6rem'
-        },
+        }
       },
-      backgroundColor:{
-        card:"#f7f7f7"
+      backgroundColor: {
+        card: '#f7f7f7'
+      },
+      height: {
+        300: '420px'
       }
     }
   },
-  plugins: [require('daisyui')],
+  plugins: [],
   daisyui: {
     themes: ['light']
   }

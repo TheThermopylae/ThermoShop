@@ -27,18 +27,24 @@
                     placeholder="product img..." v-model="productData.img">
             </div>
         </div>
-        <button class="btn btn-primary mt-5 w-full text-lg" v-if="!loading" @click="addProductFunc">Add product <i
-                class="fa-solid fa-plus"></i></button>
-        <button class="btn btn-primary mt-5 w-full text-lg" v-else>
-            <LazyLoading class="w-7 h-7"></LazyLoading>
-        </button>
+        <div class="flex items-end gap-5">
+            <select class="select select-primary select-bordered w-2/12 rounded-full max-w-xs" v-model="selectCategory">
+                <option disabled selected>Select Category</option>
+                <option :value="item" v-for="item in Categories">{{ item }}</option>
+            </select>
+            <button class="btn btn-primary mt-5 w-10/12 text-lg" v-if="!loading" @click="addProductFunc">Add product <i
+                    class="fa-solid fa-plus"></i></button>
+            <button class="btn btn-primary mt-5 w-10/12 text-lg" v-else>
+                <LazyLoading class="w-7 h-7"></LazyLoading>
+            </button>
+        </div>
         <AlertBox :class="[{ 'left-3': showAlert, '-left-1/3': !showAlert }, alertBackground]">{{ alertText }}
         </AlertBox>
     </div>
 </template>
 
 <script>
-import { inject, reactive, ref } from 'vue';
+import { inject, reactive, ref, watch } from 'vue';
 import AlertBox from '../../MainComponents/AlertBox.vue';
 import AlertHook from '../../../hooks/AlertHook';
 import LazyLoading from '../../MainComponents/LazyLoading.vue';
@@ -49,11 +55,15 @@ export default {
         LazyLoading
     },
     setup() {
+        let Categories = ["mobile", "watch", "laptop", "console"]
+        let selectCategory = ref("Select Category")
+
         let productData = reactive({
             name: "",
             price: "",
             count: "",
-            img: ""
+            img: "",
+            category: selectCategory
         })
 
         let getProducts = inject("getProducts")
@@ -69,6 +79,8 @@ export default {
                 showAlertFunc("Product price must be greater than $0!", "bg-yellow-500")
             } else if (productData.count <= 0) {
                 showAlertFunc("Product count must be greater than 0!", "bg-yellow-500")
+            } else if (selectCategory.value == "Select Category") {
+                showAlertFunc("Please select a category", "bg-yellow-500")
             } else {
                 loading.value = true
 
@@ -91,6 +103,10 @@ export default {
             }
         }
 
+        watch(selectCategory, () => {
+            console.log(selectCategory.value);
+        })
+
         return {
             productData,
             addProductFunc,
@@ -98,6 +114,8 @@ export default {
             alertText,
             alertBackground,
             loading,
+            Categories,
+            selectCategory
         }
     }
 }

@@ -51,7 +51,6 @@
                     <ul class="mt-2.5">
                         <li><router-link to="/AdminDashboard/MainAdminPage">Go To Admin Dashboard <i
                                     class="fa-solid fa-chart-column"></i></router-link></li>
-                        <li class="my-1"><router-link to="/">Item 2</router-link></li>
                         <li class="rounded-lg text-white bg-red-500 hover:bg-red-600" @click="signOut">
                             <div>
                                 <h4>Sign Out</h4>
@@ -78,9 +77,8 @@
                         </div>
                     </div>
                     <ul class="mt-2.5">
-                        <li><router-link to="/">Go To User Dashboard <i
+                        <li class="mb-1"><router-link to="/">Go To User Dashboard <i
                                     class="fa-solid fa-chart-column"></i></router-link></li>
-                        <li class="my-1"><router-link to="/">Item 2</router-link></li>
                         <li class="rounded-lg text-white bg-red-500 hover:bg-red-600" @click="signOut">
                             <div>
                                 <h4>Sign Out</h4>

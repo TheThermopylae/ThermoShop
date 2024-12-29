@@ -19,13 +19,3 @@ export default {
 }
 </script>
 
-<style>
-.gradient-text {
-    background: linear-gradient(to right, rgb(0.49 0.3 275), #ff4040);
-    /* گرادینت از آبی به بنفش */
-    -webkit-background-clip: text;
-    /* برای سازگاری با کروم */
-    color: transparent;
-    /* متن از شفاف به رنگ گرادینت تبدیل می‌شود */
-}
-</style>

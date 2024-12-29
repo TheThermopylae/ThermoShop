@@ -32,6 +32,8 @@ export default {
 
     let products = ref([])
 
+    let baskets = ref([])
+
     let route = useRoute();
     const hideHeader = computed(() => route.meta.hideHeader);
 
@@ -57,7 +59,16 @@ export default {
     function getProducts() {
       fetch(`https://authproject-ecce2-default-rtdb.firebaseio.com/products.json`)
         .then(res => res.json())
-        .then(data => products.value = Object.entries(data))
+        .then(data => {
+          let filterBaskets = Object.entries(data).filter(basket => basket[0] != "default")
+          products.value = filterBaskets
+        })
+    }
+
+    function getBaskets() {
+      fetch("https://authproject-ecce2-default-rtdb.firebaseio.com/basket.json")
+        .then(res => res.json())
+        .then(data => baskets.value = Object.entries(data))
     }
 
     function checkLogin() {
@@ -75,6 +86,7 @@ export default {
       checkLogin()
       getMessages()
       getProducts()
+      getBaskets()
     })
 
     provide("users", users)
@@ -84,6 +96,8 @@ export default {
     provide("getMessages", getMessages)
     provide("products", products)
     provide("getProducts", getProducts)
+    provide("baskets", baskets)
+    provide("getBaskets", getBaskets)
     return { hideHeader, showAlert, alertText, alertBackground, showAlertFunc }
   }
 }
@@ -128,5 +142,11 @@ export default {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, rgb(0.49 0.3 275), #ff4040);
+  background-clip: text;
+  color: transparent;
 }
 </style>

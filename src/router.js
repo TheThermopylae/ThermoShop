@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+// Home Pages
 import HomePage from './components/MainPages/HomePage.vue'
+import TargetProduct from './components/MainPages/TargetProduct.vue'
+
 import SignInPage from './components/SignUp-InPage/SignInPage.vue'
 import SignUpPage from './components/SignUp-InPage/SignUpPage.vue'
 
@@ -20,6 +23,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', component: HomePage },
+    { path: '/TargetProduct/:id', component: TargetProduct },
     { path: '/SignIn', meta: { hideHeader: true }, component: SignInPage },
     { path: '/SignUp', meta: { hideHeader: true }, component: SignUpPage },
     {
@@ -36,7 +40,7 @@ const router = createRouter({
         { path: 'SendMessagePage', component: SendMessagePage },
         { path: 'Allmessages', component: Allmessages },
         { path: 'AddProduct', component: AddProduct },
-        { path: 'AllProducts', component: AllProducts },
+        { path: 'AllProducts', component: AllProducts }
       ]
     }
   ]
