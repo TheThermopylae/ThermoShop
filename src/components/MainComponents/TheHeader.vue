@@ -18,7 +18,7 @@
                 <i
                     class="fa-solid fa-search absolute right-3 top-1/2 -translate-y-1/2 text-primary text-xl cursor-pointer"></i>
             </div>
-            <router-link to="/">
+            <router-link to="/CartPage">
                 <div class="flex items-center gap-2 text-xl">
                     <i class="fa-solid fa-cart-shopping text-primary"></i>
                     <h4>Cart</h4>
