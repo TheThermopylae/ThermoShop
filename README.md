@@ -1,1 +1,1 @@
-# ThermoShop vDev 1.2.1
+# ThermoShop vDev 1.2.2

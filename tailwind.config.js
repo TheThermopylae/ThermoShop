@@ -18,6 +18,9 @@ export default {
       },
       height: {
         300: '420px'
+      },
+      borderColor: {
+        card: '#f7f7f7'
       }
     }
   },

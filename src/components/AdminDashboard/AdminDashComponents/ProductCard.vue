@@ -1,8 +1,8 @@
 <template>
-    <div class="bg-card p-3 rounded-lg relative">
-        <img :src="product[1].img" :alt="product[1].name">
-        <div class="mb-7">
-            <h4 class="mt-2 mb-1 text-xl border-b border-gray-300 pb-1">{{ product[1].name }}</h4>
+    <div class="bg-card rounded-lg relative">
+        <img :src="product[1].img" class="border-4 border-card border-b-0 rounded-2xl" :alt="product[1].name">
+        <div class="mb-7 p-3">
+            <h4 class="mt-2 mb-1 text-xl">{{ product[1].name }}</h4>
             <div class="flex justify-between text-md">
                 <span class="text-green-500">{{ product[1].price.toLocaleString() }}$</span>
                 <span>Count : {{ product[1].count }}</span>
@@ -14,7 +14,8 @@
                     @click="$emit('showDeleteModal')"></i>
             </div>
             <div class="tooltip ml-3" data-tip="Edit Product">
-                <i class="fa-solid fa-pen hover:text-gray-500 transition-all cursor-pointer" @click="$emit('showEditModal')"></i>
+                <i class="fa-solid fa-pen hover:text-gray-500 transition-all cursor-pointer"
+                    @click="$emit('showEditModal')"></i>
             </div>
         </div>
     </div>

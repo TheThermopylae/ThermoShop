@@ -54,6 +54,7 @@ export default {
             price: props.product[1].price,
             count: props.product[1].count,
             img: props.product[1].img,
+            category:props.product[1].category
         })
 
         function editProductFunc() {
