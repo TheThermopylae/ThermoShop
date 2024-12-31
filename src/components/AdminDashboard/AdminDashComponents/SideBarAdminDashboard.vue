@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed left-0 top-0 p-5 bg-gray-200 h-screen overflow-y-scroll">
+    <div class="fixed left-0 top-0 p-5 bg-gray-200 min-h-full overflow-y-auto">
         <UserData></UserData>
         <AdminLinks></AdminLinks>
     </div>
@@ -23,3 +23,24 @@ export default {
     }
 }
 </script>
+<!-- <style>
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+</style> -->
